@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+.titulo {
+    width: 100%;
+    display: block;
+    color: rgb(12, 11, 12);
+    text-align: center;
+    margin: 20px 0 30px 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+.parrafo{
+    margin-bottom: 20px;
+}
+
+a {
+    color: brown;
+}
+
+a:hover {
+    color: brown;
+}
+
+@media (min-width: 768px){
+.dos-columnas {
+    display: flex;
+    justify-content: space-between;
+    
+  
+}
+.mapa{
+    flex-basis: calc(30% - 1rem);
+}
+
+.regiones {
+    flex-basis: calc(70% - 1rem);
+
+}
+
+}
+
+    
+
+
+
+
+
+
+
+
+
+

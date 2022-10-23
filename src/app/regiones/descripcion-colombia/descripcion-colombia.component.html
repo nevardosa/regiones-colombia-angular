@@ -1,0 +1,91 @@
+<div class="titulo">
+    Colombia
+</div>
+<div class="parrafo">
+   {{ descripcionGeneral }}
+</div>
+<div class="principal dos-columnas">
+    <div class="mapa">
+        <img src="assets/img/mapa de colombia con regiones.jpg" width="100%">
+    </div>
+    <div class="regiones">
+    <div class="regiones">
+        <p>
+            <a data-bs-toggle="collapse" href="#uno" aria-expanded="false" aria-controls="collapseExample">
+                {{ subTituloOrinoquia }}
+            </a>
+        </p>
+        <div class="collapse" id="uno">
+            <div class="card card-body">
+                <app-orinoquia> </app-orinoquia>
+            </div>
+        </div>
+    </div>
+       
+    <div class = "regiones">
+        <p>
+            <a data-bs-toggle="collapse" href="#dos" aria-expanded="false" aria-controls="collapseExample">
+                {{ subTituloAmazonia }}
+            </a>
+        </p>
+        <div class="collapse" id="dos">
+            <div class="card card-body">
+                <app-amazonia> </app-amazonia>
+            </div>
+        </div>
+    </div>
+
+    <div class = "regiones">
+        <p>
+            <a data-bs-toggle="collapse" href="#tres" aria-expanded="false" aria-controls="collapseExample">
+                {{ subTituloAndina }}
+            </a>
+        </p>
+        <div class="collapse" id="tres">
+            <div class="card card-body">
+                <app-andina> </app-andina>
+            </div>
+        </div>
+    </div>
+
+    <div class = "regiones">
+        <p>
+            <a data-bs-toggle="collapse" href="#cuatro" aria-expanded="false" aria-controls="collapseExample">
+                {{ subTituloCaribe}}
+            </a>
+        </p>
+        <div class="collapse" id="cuatro">
+            <div class="card card-body">
+                <app-caribe> </app-caribe>
+            </div>
+        </div>
+    </div>
+   
+    <div class="regiones">
+        <p>
+            <a data-bs-toggle="collapse" href="#cinco" aria-expanded="false" aria-controls="collapseExample">
+                {{ subTituloInsular}}
+            </a>
+        </p>
+        <div class="collapse" id="cinco">
+            <div class="card card-body">
+                <app-insular> </app-insular>
+            </div>
+        </div>
+
+        <div class="regiones">
+            <p>
+                <a data-bs-toggle="collapse" href="#seis" aria-expanded="false" aria-controls="collapseExample">
+                    {{ subTituloPacifica}}
+                </a>
+            </p>
+            <div class="collapse" id="seis">
+                <div class="card card-body">
+                    <app-pacifico> </app-pacifico>
+                </div>
+            </div>
+
+    </div>
+
+    </div>
+</div>

@@ -1,20 +1,26 @@
 
-FROM node:14-alpine
-ENV PROJECT_DIR=/app 
+#Build Steps
+FROM node:16-alpine as build-step
 
-WORKDIR $PROJECT_DIR 
+RUN mkdir /appregiones
+WORKDIR /appregiones
+RUN npm install -g @angular/cli@14.2.0
+COPY package.json /appregiones
+RUN npm install
+COPY . /appregiones
 
-COPY ["package*.json","$PROJECT_DIR"]
-RUN npm install 
-COPY . $PROJECT_DIR
+RUN npm run build -- --configuration production
 
-ENV MEDIA_DIR=/media \ 
-	NODE_ENV=production \ 
-	APP_PORT=3000 
+#Run Steps
+FROM nginxinc/nginx-unprivileged  
+RUN rm -rf /etc/nginx/nginx.conf.default && rm -rf /etc/nginx/conf.d/default.conf
 
-VOLUME $MEDIA_DIR 
-EXPOSE $APP_PORT 
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/conf.d/nginx.conf
+###RUN rm -rf /usr/share/nginx/html/*
+COPY --from=build-step /app/dist /usr/share/nginx/html
 
-ENTRYPOINT ["./entrypoint.sh"] 
-CMD ["start"]
+EXPOSE 8081:8081
+CMD ["nginx", "-g", "daemon off;"]
+
 
